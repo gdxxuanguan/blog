@@ -20,6 +20,8 @@ SET FOREIGN_KEY_CHECKS = 0;
 -- ----------------------------
 -- Table structure for ad
 -- ----------------------------
+create database blog;
+use blog;
 DROP TABLE IF EXISTS `ad`;
 CREATE TABLE `ad`  (
   `ad_id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '广告ID',

@@ -4,7 +4,7 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/assessment?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8
+    url: jdbc:mysql://127.0.0.1:3306/blog?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8
     username: root
     password: 123456
 
@@ -14,26 +14,6 @@ spring:
     serialization:
       write-dates-as-timestamps: false
 
-  web:
-    resources:
-      static-locations: classpath:/static/,file:static/
-
-mybatis-plus:
-  type-aliases-package: com.wxk1991.entity
-  configuration:
-    call-setters-on-nulls: false
-    map-underscore-to-camel-case: true
-    auto-mapping-behavior: full
-
-
-  mapper-locations: classpath*:mapper/**/*Mapper.xml
-  global-config:
-    field-strategy: 0
-    banner: true
-    db-config:
-      id-type: uuid
-      logic-not-delete-value: 1
-      logic-delete-value: 0
 
 logging:
   level:

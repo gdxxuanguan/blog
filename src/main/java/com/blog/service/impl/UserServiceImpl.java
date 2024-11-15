@@ -1,20 +1,22 @@
 package com.blog.service.impl;
 
-import com.blog.entity.User;
-import com.blog.mapper.UserMapper;
-import com.blog.service.UserService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.blog.domain.User;
+import com.blog.service.UserService;
+import com.blog.mapper.UserMapper;
 import org.springframework.stereotype.Service;
 
 /**
- * <p>
- *  服务实现类
- * </p>
- *
- * @author zhb
- * @since 2024-11-15
- */
+* @author 22673
+* @description 针对表【user】的数据库操作Service实现
+* @createDate 2024-11-15 18:33:05
+*/
 @Service
-public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements UserService {
+public class UserServiceImpl extends ServiceImpl<UserMapper, User>
+    implements UserService{
 
 }
+
+
+
+

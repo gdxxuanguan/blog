@@ -1,16 +1,13 @@
 package com.blog.service;
 
-import com.blog.entity.User;
+import com.blog.domain.User;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
- * <p>
- *  服务类
- * </p>
- *
- * @author zhb
- * @since 2024-11-15
- */
+* @author 22673
+* @description 针对表【user】的数据库操作Service
+* @createDate 2024-11-15 18:33:05
+*/
 public interface UserService extends IService<User> {
 
 }
