@@ -15,4 +15,8 @@
         user_id,user_name,user_password,
         user_register_time
     </sql>
+
+    <select id="selectUserByUsername" parameterType="java.lang.String"  resultType="com.blog.domain.User">
+        select * from user where user_name=#{username}
+    </select>
 </mapper>

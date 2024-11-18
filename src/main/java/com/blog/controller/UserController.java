@@ -1,5 +1,6 @@
 package com.blog.controller;
 
+import com.blog.ResultEnum;
 import com.blog.Utils.ResultUtil;
 import com.blog.domain.Result;
 import com.blog.domain.User;
@@ -15,6 +16,10 @@ public class UserController {
 
     @PostMapping("/add")
     public Result add(@RequestBody User user) {
+        User dbuser=userService.selectUserByUsername(user.getUserName());
+        if(dbuser!=null){
+            return ResultUtil.error(ResultEnum.USER_IS_EXISTS.getCode(),ResultEnum.USER_IS_EXISTS.getMsg());
+        }
         userService.save(user);
         return ResultUtil.success();
     }
@@ -24,5 +29,9 @@ public class UserController {
         return ResultUtil.success(userService.list());
     }
 
+    @GetMapping("/findById/{id}")
+    public Result findById(@PathVariable int id) {
+        return ResultUtil.success(userService.getById(id));
+    }
 
 }
