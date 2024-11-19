@@ -13,8 +13,25 @@ spring:
     date-format: yyyy-MM-dd HH:mm:ss
     serialization:
       write-dates-as-timestamps: false
-
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
 
 logging:
   level:
-    root: info
+    com.blog.mapper: debug
+
+mybatis:
+  type-aliases-package: com.blog.**.domain
+  mapper-locations: classpath:mapper/*.xml
+  #用于mybatis在控制台打印sql日志
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: countSql

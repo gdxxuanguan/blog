@@ -17,6 +17,14 @@
     </sql>
 
     <select id="selectUserByUsername" parameterType="java.lang.String"  resultType="com.blog.domain.User">
-        select * from user where user_name=#{username}
+        select * from user where user_name=#{userName}
+    </select>
+    <select id="selectAll" resultType="com.blog.domain.User">
+        select * from user
+        <where >
+            <if test="userName!=null">
+                user_name=#{userName}
+            </if>
+        </where>
     </select>
 </mapper>
